@@ -3,6 +3,7 @@
   "legalName": "IronGate Managed IT, LLC",
   "domain": "https://igm-it.com",
   "description": "Compliance-ready managed IT, cybersecurity, and support for healthcare, legal, and financial firms.",
+  "inquiryEmail": "hello@igm-it.com",
   "topbar": {
     "left": "Serving healthcare, legal & finance across the region · Mon–Fri 7a–7p support",
     "status": "24/7 monitoring active"

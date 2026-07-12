@@ -4,6 +4,8 @@
 
 [functions]
   directory = "netlify/functions"
+  # esbuild inlines the site.json import in submission-created.mjs
+  node_bundler = "esbuild"
 
 # Weekly rebuild so the security news feed stays fresh.
 # Requires BUILD_HOOK_URL env var (Site settings > Build & deploy > Build hooks).

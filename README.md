@@ -49,8 +49,10 @@ and POSTs to a Netlify build hook, so the feed refreshes weekly with zero mainte
 ## Contact form
 
 The form on `/contact/` uses **Netlify Forms** (`data-netlify="true"`), with a honeypot
-field for spam. Submissions appear in the Netlify dashboard; email notifications to
-Josh's Microsoft 365 inbox are configured in Netlify (see DEPLOY.md step 5).
+field for spam. Submissions are stored in the Netlify dashboard, and
+`netlify/functions/submission-created.mjs` emails each one (via Resend) to the
+address set in the admin panel (`site.json` → `inquiryEmail`) — so Josh controls the
+destination himself. Setup: DEPLOY.md step 5.
 
 ## Accessibility (WCAG 2.1 AA)
 
@@ -76,7 +78,7 @@ Josh's Microsoft 365 inbox are configured in Netlify (see DEPLOY.md step 5).
 - [ ] Replace placeholder phone numbers / address in `site.json` with Josh's real info
 - [ ] Replace image placeholders with real photography (hero, about, services, team)
 - [ ] Confirm certification names Josh can legally claim (partner-program rules)
-- [ ] Set the form notification email (DEPLOY.md step 5)
+- [ ] Set up Resend + `RESEND_API_KEY` so inquiries reach the inbox Josh picks in the admin (DEPLOY.md step 5)
 - [ ] Point igm-it.com DNS at Netlify (DEPLOY.md step 7)
 
 Deployment: see **DEPLOY.md**.

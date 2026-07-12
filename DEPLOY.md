@@ -35,10 +35,23 @@ Netlify detects the form on first deploy (Site configuration → Forms should li
 
 ## 5. Route inquiries to Josh's inbox
 
-Site configuration → Forms → **Form notifications** → Add notification →
-**Email notification** → enter the destination address (his Microsoft 365 mailbox).
-This is the one setting that lives in Netlify rather than the admin panel — changing
-it later is the same two clicks.
+The **destination address is set in the site admin** (`/admin/` → Site Settings →
+Business Info & Stats → *Inquiry notification email*), so Josh can point it at his
+marketing inbox, personal inbox, whatever — no dashboard access needed. Delivery
+goes through Resend (free tier: 3,000 emails/mo, far beyond what a contact form sees):
+
+1. Create a free account at [resend.com](https://resend.com).
+2. Resend → Domains → Add `igm-it.com` and add the DNS records it shows
+   (same registrar visit as step 7 — do them together).
+3. Resend → API Keys → create a key (permission: Sending access).
+4. Netlify → Site configuration → Environment variables → add
+   `RESEND_API_KEY` = that key.
+5. Optional: `INQUIRY_FROM` env var to change the sender
+   (default `IronGate Website <inquiries@igm-it.com>`).
+
+Safety net: every submission is *also* stored under Site configuration → Forms in
+the Netlify dashboard, even if email sending is misconfigured or down. You can
+additionally add a dashboard email notification there as a backup channel if wanted.
 
 ## 6. Weekly news refresh
 

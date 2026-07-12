@@ -25,6 +25,7 @@ collections:
           - { name: "legalName", label: "Legal name", widget: "string" }
           - { name: "domain", label: "Site URL", widget: "string", hint: "Include https:// — used for SEO tags." }
           - { name: "description", label: "Site description (SEO)", widget: "text" }
+          - { name: "inquiryEmail", label: "Inquiry notification email", widget: "string", hint: "Where contact-form inquiries are sent. Not shown on the website — this can be a marketing inbox, personal inbox, wherever." }
           - name: "topbar"
             label: "Top bar"
             widget: "object"
