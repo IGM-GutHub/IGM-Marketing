@@ -31,12 +31,17 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
       {% endfor %}
     </ul>
   </div>
+  {% if svc.image %}
+  <img class="photo" src="{{ svc.image }}" alt="{{ svc.imageLabel }}" style="min-height:340px">
+  {% else %}
   <div class="img-placeholder" role="img" aria-label="Placeholder image: {{ svc.imageLabel }}">
     <span>[ image &mdash; {{ svc.imageLabel }} ]</span>
   </div>
+  {% endif %}
 </section>
 {% endfor %}
 
+{% if site.sections.industries %}
 <section class="section section--navy" id="industries" aria-labelledby="svc-industries-heading">
   <div class="section-head">
     <p class="eyebrow eyebrow--light">Who we serve</p>
@@ -60,5 +65,6 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
     </div>
   </div>
 </section>
+{% endif %}
 
 {% include "partials/cta.njk" %}

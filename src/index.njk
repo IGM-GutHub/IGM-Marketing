@@ -23,18 +23,25 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
       {% endfor %}
     </div>
   </div>
+  {% if site.images.hero %}
+  <img class="photo photo--hero" src="{{ site.images.hero }}" alt="The IronGate team at work">
+  {% else %}
   <div class="img-placeholder img-placeholder--hero" role="img" aria-label="Placeholder for a photo of the IronGate IT team">
     <span>[ hero photo &mdash; IT team / server room ]</span>
   </div>
+  {% endif %}
 </section>
 
+{% if site.sections.certifications %}
 <section class="badge-strip" aria-label="Partners and certifications">
   <span class="badge-strip__label">Partners &amp; certifications</span>
   {% for cert in certifications.items %}
     <span class="badge-strip__item">{{ cert.name }}</span>
   {% endfor %}
 </section>
+{% endif %}
 
+{% if site.sections.services %}
 <section class="section" aria-labelledby="services-heading">
   <div class="section-head">
     <p class="eyebrow">What we do</p>
@@ -89,7 +96,9 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
     </div>
   </div>
 </section>
+{% endif %}
 
+{% if site.sections.industries %}
 <section class="section section--navy" id="industries" aria-labelledby="industries-heading">
   <div class="section-head">
     <p class="eyebrow eyebrow--light">Who we serve</p>
@@ -113,7 +122,9 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
     </div>
   </div>
 </section>
+{% endif %}
 
+{% if site.sections.testimonials %}
 <section class="section section--mist" aria-labelledby="testimonials-heading">
   <div class="section-head">
     <p class="eyebrow">Client stories</p>
@@ -136,7 +147,9 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
+{% if site.sections.news %}
 <section class="section" aria-labelledby="news-heading">
   <div class="news-header">
     <div>
@@ -159,5 +172,6 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 {% include "partials/cta.njk" %}

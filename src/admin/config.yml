@@ -32,6 +32,32 @@ collections:
           - { name: "domain", label: "Site URL", widget: "string", hint: "Include https:// — used for SEO tags." }
           - { name: "description", label: "Site description (SEO)", widget: "text" }
           - { name: "inquiryEmail", label: "Inquiry notification email", widget: "string", hint: "Where contact-form inquiries are sent. Not shown on the website — this can be a marketing inbox, personal inbox, wherever." }
+          - { name: "logo", label: "Logo", widget: "image", required: false, allow_multiple: false, hint: "Square-ish works best (shown ~40px tall in the header). Leave empty to use the built-in navy/teal mark." }
+          - name: "images"
+            label: "Site photos"
+            widget: "object"
+            fields:
+              - { name: "hero", label: "Homepage hero photo", widget: "image", required: false, allow_multiple: false, hint: "Landscape, at least 1200px wide. Empty = placeholder pattern." }
+              - { name: "aboutHero", label: "About page top photo", widget: "image", required: false, allow_multiple: false }
+              - { name: "story", label: "About 'Our story' photo", widget: "image", required: false, allow_multiple: false }
+              - { name: "map", label: "Contact page map image", widget: "image", required: false, allow_multiple: false, hint: "A screenshot of Google Maps works fine." }
+          - name: "sections"
+            label: "Show / hide website sections"
+            widget: "object"
+            hint: "Toggle whole sections of the site on or off. Changes go live after the ~1 minute rebuild."
+            fields:
+              - { name: "certifications", label: "Partners & certifications strips (Home + About)", widget: "boolean", default: true }
+              - { name: "services", label: "Homepage services grid", widget: "boolean", default: true }
+              - { name: "industries", label: "Industries sections (Home + Services, incl. menu link)", widget: "boolean", default: true }
+              - { name: "testimonials", label: "Homepage testimonials", widget: "boolean", default: true }
+              - { name: "news", label: "Homepage security news cards", widget: "boolean", default: true }
+              - { name: "cta", label: "'Book a consult' banner (all pages)", widget: "boolean", default: true }
+              - { name: "aboutStats", label: "About page stats band", widget: "boolean", default: true }
+              - { name: "story", label: "About page 'Our story'", widget: "boolean", default: true }
+              - { name: "values", label: "About page values cards", widget: "boolean", default: true }
+              - { name: "team", label: "About page leadership team", widget: "boolean", default: false }
+              - { name: "existingClient", label: "Contact page 'Existing client?' box", widget: "boolean", default: true }
+              - { name: "map", label: "Contact page map", widget: "boolean", default: true }
           - name: "topbar"
             label: "Top bar"
             widget: "object"
@@ -107,6 +133,7 @@ collections:
               - { name: "name", label: "Name", widget: "string" }
               - { name: "role", label: "Role", widget: "string" }
               - { name: "bio", label: "Short bio", widget: "text" }
+              - { name: "photo", label: "Photo", widget: "image", required: false, allow_multiple: false, hint: "Optional — a neutral placeholder shows if empty." }
 
       - name: "services"
         label: "Services"
@@ -126,3 +153,4 @@ collections:
                 widget: "list"
                 field: { name: "feature", label: "Feature", widget: "string" }
               - { name: "imageLabel", label: "Image placeholder label", widget: "string" }
+              - { name: "image", label: "Photo", widget: "image", required: false, allow_multiple: false, hint: "Optional — replaces the placeholder for this service." }

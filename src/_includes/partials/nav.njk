@@ -1,6 +1,10 @@
 <header class="nav">
   <a class="brand" href="/" aria-label="IronGate Managed IT — home">
+    {% if site.logo %}
+    <img class="brand__logo" src="{{ site.logo }}" alt="">
+    {% else %}
     <span class="brand__mark" aria-hidden="true"><span></span></span>
+    {% endif %}
     <span>
       <span class="brand__name">IronGate</span>
       <span class="brand__tag">Managed IT</span>
@@ -13,7 +17,7 @@
     </button>
     <ul class="nav__links" id="nav-links">
       <li><a href="/services/" {% if page.url == "/services/" %}aria-current="page"{% endif %}>Services</a></li>
-      <li><a href="/services/#industries">Industries</a></li>
+      {% if site.sections.industries %}<li><a href="/services/#industries">Industries</a></li>{% endif %}
       <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
       <li><a href="/resources/" {% if page.url == "/resources/" %}aria-current="page"{% endif %}>Resources</a></li>
       <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>

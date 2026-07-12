@@ -1,5 +1,7 @@
+{% if site.sections.cta %}
 <section class="cta-band" aria-label="Book a consult">
   <h2>{{ ctaHeading or "Let's find out how we can help." }}</h2>
   <p>{{ ctaSub or "Book a free 30-minute consult — no pressure, no jargon." }}</p>
   <a class="btn btn--white" href="/contact/">Book a consult</a>
 </section>
+{% endif %}

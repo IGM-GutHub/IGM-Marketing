@@ -38,10 +38,12 @@ permalink: /contact/
       </div>
     </div>
 
+    {% if site.sections.existingClient %}
     <div class="client-callout">
       <div class="client-callout__head"><span class="topbar__dot" aria-hidden="true">&#9679;</span> Existing client?</div>
       <p>Reach the 24/7 help desk any time at <strong>{{ site.existingClient.phone }}</strong> or <a href="mailto:{{ site.existingClient.email }}" style="color:var(--teal-300)">{{ site.existingClient.email }}</a>.</p>
     </div>
+    {% endif %}
   </div>
 
   <div class="form-card">
@@ -107,6 +109,12 @@ permalink: /contact/
   </div>
 </section>
 
-<div class="img-placeholder map-placeholder" role="img" aria-label="Placeholder for a map showing the office at {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }}">
-  <span>[ map &mdash; {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }} ]</span>
-</div>
+{% if site.sections.map %}
+  {% if site.images.map %}
+  <img class="photo photo--map" src="{{ site.images.map }}" alt="Map showing the office at {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }}">
+  {% else %}
+  <div class="img-placeholder map-placeholder" role="img" aria-label="Placeholder for a map showing the office at {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }}">
+    <span>[ map &mdash; {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }} ]</span>
+  </div>
+  {% endif %}
+{% endif %}

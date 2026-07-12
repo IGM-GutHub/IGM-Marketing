@@ -1,7 +1,11 @@
 <footer class="footer">
   <div>
     <div class="footer__brand">
+      {% if site.logo %}
+      <img class="brand__logo" src="{{ site.logo }}" alt="">
+      {% else %}
       <span class="brand__mark" aria-hidden="true"><span></span></span>
+      {% endif %}
       <strong>IronGate</strong>
     </div>
     <p class="footer__blurb">{{ site.footerBlurb }}</p>
@@ -19,7 +23,7 @@
     <h2>Company</h2>
     <ul>
       <li><a href="/about/">About</a></li>
-      <li><a href="/services/#industries">Industries</a></li>
+      {% if site.sections.industries %}<li><a href="/services/#industries">Industries</a></li>{% endif %}
       <li><a href="/resources/">Resources</a></li>
       <li><a href="/contact/">Contact</a></li>
     </ul>
