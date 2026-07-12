@@ -1032,6 +1032,11 @@ h3 {
   background: var(--mist-50);
 }
 
+/* every other split row swaps image to the left */
+.split--flip > *:last-child {
+  order: -1;
+}
+
 .split h2 {
   font-weight: 800;
   font-size: clamp(26px, 3vw, 34px);
@@ -1341,7 +1346,10 @@ h3 {
     gap: 36px;
   }
 
-  .split > .img-placeholder {
+  /* stacked layout: text always above image, flipped rows included */
+  .split > .img-placeholder,
+  .split > .photo,
+  .split--flip > *:last-child {
     order: 1;
   }
 

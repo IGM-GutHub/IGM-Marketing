@@ -20,7 +20,7 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
 </nav>
 
 {% for svc in services.items %}
-<section id="{{ svc.id }}" class="split {% if loop.index is even %}split--mist{% endif %}" aria-labelledby="{{ svc.id }}-heading">
+<section id="{{ svc.id }}" class="split{% if loop.index is even %} split--mist split--flip{% endif %}" aria-labelledby="{{ svc.id }}-heading">
   <div>
     <p class="split__index">{{ svc.index }}</p>
     <h2 id="{{ svc.id }}-heading">{{ svc.heading }}</h2>

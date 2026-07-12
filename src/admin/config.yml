@@ -81,6 +81,13 @@ collections:
             fields:
               - { name: "phone", label: "Help desk phone", widget: "string" }
               - { name: "email", label: "Help desk email", widget: "string" }
+          - name: "hero"
+            label: "Homepage hero text"
+            widget: "object"
+            fields:
+              - { name: "pill", label: "Badge text (above headline)", widget: "string" }
+              - { name: "heading", label: "Headline", widget: "string" }
+              - { name: "lead", label: "Paragraph", widget: "text" }
           - name: "heroStats"
             label: "Homepage hero stats"
             widget: "list"

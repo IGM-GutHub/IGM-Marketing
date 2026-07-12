@@ -11,6 +11,11 @@
   },
   "domain": "https://igm-it.com",
   "legalName": "IronGate Managed IT, LLC",
+  "hero": {
+    "pill": "HIPAA · SOC 2 · compliance-ready IT",
+    "heading": "IT that keeps regulated business running.",
+    "lead": "IronGate delivers managed IT, cybersecurity, and compliance support built for healthcare, legal, and financial firms — so downtime, audits, and breaches never slow you down."
+  },
   "heroStats": [
     {
       "value": "99.98%",
