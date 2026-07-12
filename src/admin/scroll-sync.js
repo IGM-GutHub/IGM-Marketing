@@ -22,6 +22,7 @@
     ["about page stats", ".stats-band"],
     ["footer blurb", ".footer"],
     ["logo", ".brand"],
+    ["browser tab icon", ".brand"],
     ["company short name", ".brand"],
     ["legal name", ".footer"],
     // Content collections

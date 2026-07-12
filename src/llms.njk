@@ -1,0 +1,30 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.legalName }}
+
+> {{ site.description }}
+
+{{ site.name }} is a managed IT services provider (MSP) serving healthcare, legal,
+and financial firms in and around {{ site.contact.city }}. Compliance-focused:
+HIPAA, SOC 2, and PCI readiness.
+
+## Services
+{% for svc in services.items %}- {{ svc.chip }}: {{ svc.body }}
+{% endfor %}
+## Industries served
+{% for ind in industries.items %}- {{ ind.title }} ({{ ind.label | lower }}): {{ ind.body }}
+{% endfor %}
+## Contact
+- Phone: {{ site.contact.phone }} ({{ site.contact.hours }})
+- Email: {{ site.contact.email }}
+- Address: {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }}
+- Book a consult: {{ site.domain }}/contact/
+
+## Pages
+- [Home]({{ site.domain }}/)
+- [Services]({{ site.domain }}/services/)
+- [About]({{ site.domain }}/about/)
+- [Security news & resources]({{ site.domain }}/resources/)
+- [Contact]({{ site.domain }}/contact/)

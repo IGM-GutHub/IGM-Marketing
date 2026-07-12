@@ -73,6 +73,28 @@ destination himself. Setup: DEPLOY.md step 5.
   logic in this codebase
 - Form has honeypot; Netlify applies its own spam filtering (Akismet)
 
+## SEO & AI discoverability
+
+On-site (already built):
+- Per-page titles/descriptions, canonical URLs, OpenGraph tags (og:image uses the
+  uploaded hero photo or logo)
+- **LocalBusiness structured data** (JSON-LD, `ProfessionalService`) on the homepage —
+  name, phone, address, area served, and all 7 services as offers. This is what Google
+  and AI assistants read to answer "MSP near [city]". It's driven by `site.json`, so it
+  updates when Josh edits contact info.
+- `sitemap.xml` (auto-generated), referenced from robots.txt
+- `llms.txt` — a plain-text business summary for AI crawlers, generated from site data
+- Fast static pages (Core Web Vitals), semantic HTML, alt text
+
+Off-site (Josh's checklist — these matter MORE than anything on the site for local search):
+1. **Google Business Profile** (business.google.com) — the #1 factor for "MSP near me".
+   Claim it, categorize as "Computer support and services", link igm-it.com, add photos.
+2. Bing Places (Bing/Copilot pulls from it).
+3. Consistent NAP (name/address/phone) everywhere the business is listed — must match
+   the site exactly.
+4. Reviews on the Google profile — steady trickle beats a burst.
+5. Google Search Console: submit https://igm-it.com/sitemap.xml after launch.
+
 ## Before launch checklist
 
 - [ ] Replace placeholder phone numbers / address in `site.json` with Josh's real info

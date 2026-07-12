@@ -10,7 +10,51 @@
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.domain }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.legalName }}">
+  {%- if site.images.hero %}
+  <meta property="og:image" content="{{ site.domain }}{{ site.images.hero }}">
+  {%- elif site.logo %}
+  <meta property="og:image" content="{{ site.domain }}{{ site.logo }}">
+  {%- endif %}
+  {%- if site.favicon %}
+  <link rel="icon" href="{{ site.favicon }}">
+  <link rel="apple-touch-icon" href="{{ site.favicon }}">
+  {%- else %}
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  {%- endif %}
+  <link rel="sitemap" href="/sitemap.xml">
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": {{ site.legalName | dump | safe }},
+    "alternateName": {{ (site.name + " Managed IT") | dump | safe }},
+    "url": {{ site.domain | dump | safe }},
+    "description": {{ site.description | dump | safe }},
+    "telephone": {{ site.contact.phone | dump | safe }},
+    "email": {{ site.contact.email | dump | safe }},
+    {%- if site.logo %}
+    "logo": {{ (site.domain + site.logo) | dump | safe }},
+    {%- endif %}
+    {%- if site.images.hero %}
+    "image": {{ (site.domain + site.images.hero) | dump | safe }},
+    {%- endif %}
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{ site.contact.addressLine1 | dump | safe }},
+      "addressLocality": {{ site.contact.city | dump | safe }}
+    },
+    "areaServed": {{ site.contact.city | dump | safe }},
+    "knowsAbout": ["Managed IT services", "Cybersecurity", "HIPAA compliance", "SOC 2 compliance", "Cloud computing", "Data backup and disaster recovery"],
+    "makesOffer": [
+      {%- for svc in services.items %}
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": {{ svc.chip | dump | safe }}, "description": {{ svc.body | dump | safe }} } }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+  {%- endif %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

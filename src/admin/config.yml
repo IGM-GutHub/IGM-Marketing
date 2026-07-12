@@ -33,6 +33,7 @@ collections:
           - { name: "description", label: "Site description (SEO)", widget: "text" }
           - { name: "inquiryEmail", label: "Inquiry notification email", widget: "string", hint: "Where contact-form inquiries are sent. Not shown on the website — this can be a marketing inbox, personal inbox, wherever." }
           - { name: "logo", label: "Logo", widget: "image", required: false, allow_multiple: false, hint: "Square-ish works best (shown ~40px tall in the header). Leave empty to use the built-in navy/teal mark." }
+          - { name: "favicon", label: "Browser tab icon (favicon)", widget: "image", required: false, allow_multiple: false, hint: "Square PNG or SVG, ideally 512x512 or larger. Leave empty to use the built-in navy/teal mark." }
           - name: "images"
             label: "Site photos"
             widget: "object"
