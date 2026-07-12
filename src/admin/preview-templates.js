@@ -47,6 +47,14 @@
       var stats = items(e, ["heroStats"]);
       var aboutStats = items(e, ["aboutStats"]);
 
+      function photoCard(cls, label, src) {
+        return h("div", { className: cls },
+          src
+            ? h("img", { className: "photo", src: src, style: { minHeight: "180px", maxHeight: "220px" } })
+            : placeholder(label, ""),
+          h("div", { className: "mono-label", style: { marginTop: "8px", textAlign: "center" } }, label));
+      }
+
       var statNodes = [];
       stats.forEach(function (s, i) {
         if (i) statNodes.push(h("div", { className: "hero__divider", key: "d" + i }));
@@ -89,6 +97,13 @@
               h("div", { className: "stats-band__value" }, s.value),
               h("div", { className: "stats-band__label" }, s.label));
           })),
+        h("section", { className: "section section--mist pv-photos" },
+          h("div", { className: "section-head" },
+            h("p", { className: "eyebrow" }, "Photos used on other pages")),
+          h("div", { className: "grid-3" },
+            photoCard("pv-photo-aboutHero", "About page top photo", img(getAsset, val(e, ["images", "aboutHero"]))),
+            photoCard("pv-photo-story", "About 'Our story' photo", img(getAsset, val(e, ["images", "story"]))),
+            photoCard("pv-photo-map", "Contact page map image", img(getAsset, val(e, ["images", "map"]))))),
         h("section", { className: "contact-grid" },
           h("div", null,
             h("span", { className: "pill" }, "Book a consult"),
