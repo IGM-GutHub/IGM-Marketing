@@ -47,7 +47,8 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
     <p class="eyebrow eyebrow--light">Who we serve</p>
     <h2 id="svc-industries-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">Tailored to regulated industries</h2>
   </div>
-  <div class="grid-3">
+  {% set indCount = industries.items | length %}
+  <div class="grid-industries{% if indCount <= 4 %} grid-industries--{{ indCount }}{% endif %}">
     {% for ind in industries.items %}
     <div class="industry-card">
       <div class="industry-card__index">{{ ind.label }}</div>

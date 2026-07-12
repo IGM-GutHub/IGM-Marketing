@@ -104,7 +104,8 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
     <p class="eyebrow eyebrow--light">Who we serve</p>
     <h2 id="industries-heading" class="display-2">Built for industries that can't afford to fail an audit</h2>
   </div>
-  <div class="grid-3">
+  {% set indCount = industries.items | length %}
+  <div class="grid-industries{% if indCount <= 4 %} grid-industries--{{ indCount }}{% endif %}">
     {% for ind in industries.items %}
     <div class="industry-card">
       <div class="industry-card__index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }} / {{ ind.label }}</div>

@@ -706,6 +706,43 @@ h3 {
   margin: 0;
 }
 
+/* Industries grid: 1-4 items share one row; 5+ fall back to
+   3 columns (3x2, 3x3, ...). Count class is set at build time. */
+.grid-industries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.grid-industries--1 {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.grid-industries--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-industries--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1080px) {
+  .grid-industries,
+  .grid-industries--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .grid-industries,
+  .grid-industries--2,
+  .grid-industries--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- testimonials ---------- */
 .quote-card {
   background: #fff;
