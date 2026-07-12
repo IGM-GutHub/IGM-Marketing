@@ -7,10 +7,10 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 const FEEDS = [
-  { source: "CISA", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml" },
-  { source: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" },
-  { source: "BleepingComputer", url: "https://www.bleepingcomputer.com/feed/" },
-  { source: "Krebs on Security", url: "https://krebsonsecurity.com/feed/" },
+  { source: "CISA", slug: "cisa", tagline: "US Cyber Defense Agency", url: "https://www.cisa.gov/cybersecurity-advisories/all.xml" },
+  { source: "The Hacker News", slug: "thn", tagline: "Security News", url: "https://feeds.feedburner.com/TheHackersNews" },
+  { source: "BleepingComputer", slug: "bleeping", tagline: "Tech & Security News", url: "https://www.bleepingcomputer.com/feed/" },
+  { source: "Krebs on Security", slug: "krebs", tagline: "In-depth Reporting", url: "https://krebsonsecurity.com/feed/" },
 ];
 
 const MAX_PER_SOURCE = 6;
@@ -38,7 +38,7 @@ function tag(block, name) {
   return m ? m[1].trim() : "";
 }
 
-function parseFeed(xml, source) {
+function parseFeed(xml, feed) {
   const items = [];
   // RSS 2.0 <item> blocks; Atom <entry> blocks as fallback
   const blocks = xml.match(/<item[\s>][\s\S]*?<\/item>/gi) || xml.match(/<entry[\s>][\s\S]*?<\/entry>/gi) || [];
@@ -57,7 +57,9 @@ function parseFeed(xml, source) {
     items.push({
       title,
       link,
-      source,
+      source: feed.source,
+      slug: feed.slug,
+      tagline: feed.tagline,
       date: isNaN(parsed) ? new Date().toISOString() : parsed.toISOString(),
     });
     if (items.length >= MAX_PER_SOURCE) break;
@@ -75,7 +77,7 @@ module.exports = async function () {
           headers: { "user-agent": "Mozilla/5.0 (compatible; IronGateSiteBuilder/1.0)" },
         },
       });
-      return parseFeed(xml, feed.source);
+      return parseFeed(xml, feed);
     })
   );
 

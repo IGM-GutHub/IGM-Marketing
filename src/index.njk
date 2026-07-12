@@ -161,9 +161,12 @@ description: IronGate delivers managed IT, cybersecurity, and compliance support
   <div class="grid-3">
     {% for item in news | limit(3) %}
     <article class="news-card">
-      <div class="news-card__thumb" aria-hidden="true"><span class="news-card__source">{{ item.source }}</span></div>
+      <div class="news-card__thumb news-card__thumb--{{ item.slug }}" aria-hidden="true">
+        <div class="news-card__wordmark">{{ item.source }}<span>.</span></div>
+        <div class="news-card__tagline">{{ item.tagline }}</div>
+      </div>
       <div class="news-card__body">
-        <div class="news-card__date">{{ item.date | newsDate }}</div>
+        <div class="news-card__date">{{ item.date | newsDate }} &middot; {{ item.source }}</div>
         <h3><a href="{{ item.link }}" rel="noopener external" target="_blank">{{ item.title }}<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"> (opens in a new tab)</span></a></h3>
       </div>
     </article>
