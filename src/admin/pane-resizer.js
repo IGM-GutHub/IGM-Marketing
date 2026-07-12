@@ -55,13 +55,36 @@
     handle.setAttribute("role", "separator");
     handle.setAttribute("aria-label", "Resize preview pane");
     handle.style.cssText =
-      "position:fixed;width:10px;z-index:2147483000;cursor:col-resize;" +
-      "background:transparent;border-left:2px solid rgba(18,118,132,.35);";
+      "position:fixed;width:14px;z-index:2147483000;cursor:col-resize;" +
+      "background:transparent;border-left:2px solid rgba(18,118,132,.4);" +
+      "transition:background .12s ease,border-color .12s ease;";
+
+    // visible grip: rounded teal tab with dots, vertically centered
+    var grip = document.createElement("div");
+    grip.style.cssText =
+      "position:absolute;top:50%;left:-7px;transform:translateY(-50%);" +
+      "width:16px;height:64px;border-radius:999px;background:#127684;" +
+      "box-shadow:0 2px 8px rgba(11,26,44,.35);display:flex;flex-direction:column;" +
+      "align-items:center;justify-content:center;gap:5px;pointer-events:none;" +
+      "transition:transform .12s ease,background .12s ease;";
+    for (var i = 0; i < 3; i++) {
+      var dot = document.createElement("div");
+      dot.style.cssText = "width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.9);";
+      grip.appendChild(dot);
+    }
+    handle.appendChild(grip);
+
     handle.addEventListener("mouseenter", function () {
-      handle.style.borderLeftColor = "rgba(18,118,132,.9)";
+      handle.style.borderLeftColor = "rgba(18,118,132,.95)";
+      handle.style.background = "rgba(18,118,132,.12)";
+      grip.style.background = "#0e6b77";
+      grip.style.transform = "translateY(-50%) scale(1.15)";
     });
     handle.addEventListener("mouseleave", function () {
-      handle.style.borderLeftColor = "rgba(18,118,132,.35)";
+      handle.style.borderLeftColor = "rgba(18,118,132,.4)";
+      handle.style.background = "transparent";
+      grip.style.background = "#127684";
+      grip.style.transform = "translateY(-50%)";
     });
 
     var dragging = false;
