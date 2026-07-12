@@ -48,21 +48,13 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
     <h2 id="svc-industries-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">Tailored to regulated industries</h2>
   </div>
   <div class="grid-3">
+    {% for ind in industries.items %}
     <div class="industry-card">
-      <div class="industry-card__index">HEALTHCARE</div>
-      <h3>Clinics &amp; practices</h3>
-      <p>HIPAA-aligned infrastructure, EHR support, and breach protection for patient data.</p>
+      <div class="industry-card__index">{{ ind.label }}</div>
+      <h3>{{ ind.title }}</h3>
+      <p>{{ ind.body }}</p>
     </div>
-    <div class="industry-card">
-      <div class="industry-card__index">LEGAL</div>
-      <h3>Law firms</h3>
-      <p>Confidential document management, secure e-discovery, and airtight client privilege.</p>
-    </div>
-    <div class="industry-card">
-      <div class="industry-card__index">FINANCE</div>
-      <h3>Financial services</h3>
-      <p>SEC &amp; FINRA-conscious controls, encryption, and continuity for firms that move money.</p>
-    </div>
+    {% endfor %}
   </div>
 </section>
 {% endif %}

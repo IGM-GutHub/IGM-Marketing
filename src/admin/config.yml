@@ -122,6 +122,19 @@ collections:
               - { name: "name", label: "Person's name", widget: "string" }
               - { name: "role", label: "Role & company", widget: "string" }
 
+      - name: "industries"
+        label: "Industries"
+        file: "src/_data/industries.json"
+        fields:
+          - name: "items"
+            label: "Industries"
+            widget: "list"
+            hint: "Shown on the homepage and Services page. The numbering (01, 02…) is automatic."
+            fields:
+              - { name: "label", label: "Short label (e.g. HEALTHCARE)", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "body", label: "Description", widget: "text" }
+
       - name: "team"
         label: "Leadership Team"
         file: "src/_data/team.json"

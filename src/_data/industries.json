@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "label": "HEALTHCARE",
+      "title": "Clinics & practices",
+      "body": "HIPAA-aligned infrastructure, EHR support, and breach protection for patient data."
+    },
+    {
+      "label": "LEGAL",
+      "title": "Law firms",
+      "body": "Confidential document management, secure e-discovery, and airtight client privilege."
+    },
+    {
+      "label": "FINANCE",
+      "title": "Financial services",
+      "body": "SEC & FINRA-conscious controls, encryption, and continuity for firms that move money."
+    }
+  ]
+}
