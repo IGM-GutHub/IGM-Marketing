@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div>
+    <div class="footer__brand">
+      <span class="brand__mark" aria-hidden="true"><span></span></span>
+      <strong>IronGate</strong>
+    </div>
+    <p class="footer__blurb">{{ site.footerBlurb }}</p>
+  </div>
+  <nav aria-label="Services">
+    <h2>Services</h2>
+    <ul>
+      <li><a href="/services/#managed">Managed IT</a></li>
+      <li><a href="/services/#compliance">Cybersecurity</a></li>
+      <li><a href="/services/#cloud">Cloud</a></li>
+      <li><a href="/services/#backup">Backup &amp; Recovery</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Company">
+    <h2>Company</h2>
+    <ul>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/services/#industries">Industries</a></li>
+      <li><a href="/resources/">Resources</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+  <div>
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="tel:{{ site.contact.phone | replace('(', '') | replace(')', '') | replace(' ', '') | replace('-', '') }}">{{ site.contact.phone }}</a></li>
+      <li><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></li>
+      <li>{{ site.contact.city }}</li>
+    </ul>
+  </div>
+  <div class="footer__legal">
+    <span>&copy; {% year %} {{ site.legalName }}. All rights reserved.</span>
+    <span>{{ site.topbar.status }}</span>
+  </div>
+</footer>

@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "id": "managed",
+      "index": "01 / MANAGED IT SERVICES",
+      "chip": "Managed IT",
+      "heading": "Your always-on IT department",
+      "body": "We monitor, maintain, and manage your entire environment around the clock — catching and resolving issues before they ever reach your team. Predictable flat-rate billing means no surprise invoices when things break.",
+      "features": [
+        "24/7 proactive monitoring & alerting",
+        "Unlimited help desk & onsite support",
+        "Patch management & asset lifecycle",
+        "Strategic technology roadmapping (vCIO)"
+      ],
+      "imageLabel": "NOC / dashboard"
+    },
+    {
+      "id": "cloud",
+      "index": "02 / CLOUD COMPUTING",
+      "chip": "Cloud Computing",
+      "heading": "Secure cloud, without the headaches",
+      "body": "Migrate, host, and scale your workloads in the cloud with security and compliance baked in. Give a distributed workforce safe access to the apps and data they need from anywhere.",
+      "features": [
+        "Microsoft 365 & Azure migration and management",
+        "Virtual desktops for secure remote access",
+        "Identity & access management with MFA",
+        "Cost optimization & license management"
+      ],
+      "imageLabel": "cloud infrastructure"
+    },
+    {
+      "id": "network",
+      "index": "03 / NETWORK SECURITY",
+      "chip": "Network Security",
+      "heading": "Defense in depth, tuned to your risk",
+      "body": "Layered protection across your network, endpoints, and users — sized to your budget and threat profile. We deploy, monitor, and continuously tune your defenses so attackers never find an open door.",
+      "features": [
+        "Next-gen firewalls & network segmentation",
+        "Managed endpoint detection & response (EDR)",
+        "Email filtering & phishing protection",
+        "24/7 SOC monitoring & threat response"
+      ],
+      "imageLabel": "security operations"
+    },
+    {
+      "id": "backup",
+      "index": "04 / DATA BACKUP & RECOVERY",
+      "chip": "Backup & Recovery",
+      "heading": "Back to business in minutes, not days",
+      "body": "Automated, encrypted, offsite backups paired with regularly tested recovery plans. When ransomware, hardware failure, or human error strikes, you restore fast — with your compliance obligations intact.",
+      "features": [
+        "Automated encrypted backups (onsite + cloud)",
+        "Documented, tested disaster recovery plans",
+        "Business continuity & failover",
+        "Retention policies aligned to regulations"
+      ],
+      "imageLabel": "recovery / continuity"
+    },
+    {
+      "id": "remote",
+      "index": "05 / REMOTE IT SUPPORT",
+      "chip": "Remote IT",
+      "heading": "Fast help, wherever your team works",
+      "body": "On-site, hybrid, or fully remote — your people get quick, friendly resolution from a US-based help desk that already knows your environment. Most tickets are solved on first contact in under 15 minutes.",
+      "features": [
+        "< 15 minute average response time",
+        "Secure remote access & screen share",
+        "New-hire onboarding & offboarding",
+        "Device provisioning & mobile support"
+      ],
+      "imageLabel": "help desk team"
+    },
+    {
+      "id": "compliance",
+      "index": "06 / CYBERSECURITY & COMPLIANCE",
+      "chip": "Cybersecurity & Compliance",
+      "heading": "Pass the audit. Prove it.",
+      "body": "HIPAA, SOC 2, and PCI readiness with the documentation, controls, and training regulators expect. We run the risk assessments, write the policies, and give you the evidence to sail through audits.",
+      "features": [
+        "Risk assessments & gap analysis",
+        "Policy authoring & documentation",
+        "Security awareness training & phishing tests",
+        "Audit support & evidence collection"
+      ],
+      "imageLabel": "audit / compliance"
+    },
+    {
+      "id": "voip",
+      "index": "07 / VOIP & PHONE SYSTEMS",
+      "chip": "VoIP & Phone",
+      "heading": "Modern phones your team actually likes",
+      "body": "Cloud-based business phone systems with the features a professional office needs — and mobile apps so your team is reachable on any device without giving out personal numbers.",
+      "features": [
+        "Call routing, auto-attendant & queues",
+        "Voicemail-to-email & call recording",
+        "Desktop & mobile softphone apps",
+        "Seamless number porting & setup"
+      ],
+      "imageLabel": "VoIP handset / app"
+    }
+  ]
+}

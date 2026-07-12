@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: "content: update {{path}} via site admin"
+
+# Editing happens against the live repo; every save is a commit,
+# so every change Josh makes is version-controlled and recoverable.
+publish_mode: simple
+media_folder: "src/assets/img/uploads"
+public_folder: "/assets/img/uploads"
+site_url: https://igm-it.com
+logo_url: https://igm-it.com/assets/img/favicon.svg
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    description: "Contact info, hours, phone numbers, and the stats shown on the site."
+    files:
+      - name: "site"
+        label: "Business Info & Stats"
+        file: "src/_data/site.json"
+        fields:
+          - { name: "name", label: "Company short name", widget: "string" }
+          - { name: "legalName", label: "Legal name", widget: "string" }
+          - { name: "domain", label: "Site URL", widget: "string", hint: "Include https:// — used for SEO tags." }
+          - { name: "description", label: "Site description (SEO)", widget: "text" }
+          - name: "topbar"
+            label: "Top bar"
+            widget: "object"
+            fields:
+              - { name: "left", label: "Left text", widget: "string" }
+              - { name: "status", label: "Status text", widget: "string" }
+          - name: "contact"
+            label: "Contact info"
+            widget: "object"
+            fields:
+              - { name: "phone", label: "Phone", widget: "string" }
+              - { name: "email", label: "Email", widget: "string" }
+              - { name: "addressLine1", label: "Address line 1", widget: "string" }
+              - { name: "addressLine2", label: "Address line 2", widget: "string" }
+              - { name: "city", label: "City, State (footer)", widget: "string" }
+              - { name: "hours", label: "Phone hours", widget: "string" }
+              - { name: "emailNote", label: "Email response note", widget: "string" }
+          - name: "existingClient"
+            label: "Existing-client help desk"
+            widget: "object"
+            fields:
+              - { name: "phone", label: "Help desk phone", widget: "string" }
+              - { name: "email", label: "Help desk email", widget: "string" }
+          - name: "heroStats"
+            label: "Homepage hero stats"
+            widget: "list"
+            max: 3
+            fields:
+              - { name: "value", label: "Value", widget: "string" }
+              - { name: "label", label: "Label", widget: "string" }
+          - name: "aboutStats"
+            label: "About page stats"
+            widget: "list"
+            max: 4
+            fields:
+              - { name: "value", label: "Value", widget: "string" }
+              - { name: "label", label: "Label", widget: "string" }
+          - { name: "footerBlurb", label: "Footer blurb", widget: "text" }
+
+  - name: "content"
+    label: "Site Content"
+    files:
+      - name: "certifications"
+        label: "Partners & Certifications"
+        file: "src/_data/certifications.json"
+        fields:
+          - name: "items"
+            label: "Certifications"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+
+      - name: "testimonials"
+        label: "Customer Testimonials"
+        file: "src/_data/testimonials.json"
+        fields:
+          - name: "items"
+            label: "Testimonials"
+            widget: "list"
+            fields:
+              - { name: "quote", label: "Quote", widget: "text", hint: "Don't include quotation marks — they're added automatically." }
+              - { name: "name", label: "Person's name", widget: "string" }
+              - { name: "role", label: "Role & company", widget: "string" }
+
+      - name: "team"
+        label: "Leadership Team"
+        file: "src/_data/team.json"
+        fields:
+          - name: "items"
+            label: "Team members"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "role", label: "Role", widget: "string" }
+              - { name: "bio", label: "Short bio", widget: "text" }
+
+      - name: "services"
+        label: "Services"
+        file: "src/_data/services.json"
+        fields:
+          - name: "items"
+            label: "Services"
+            widget: "list"
+            fields:
+              - { name: "id", label: "URL anchor (don't change casually)", widget: "string" }
+              - { name: "index", label: "Index label (e.g. 01 / MANAGED IT)", widget: "string" }
+              - { name: "chip", label: "Short name (jump chips)", widget: "string" }
+              - { name: "heading", label: "Heading", widget: "string" }
+              - { name: "body", label: "Description", widget: "text" }
+              - name: "features"
+                label: "Feature bullets"
+                widget: "list"
+                field: { name: "feature", label: "Feature", widget: "string" }
+              - { name: "imageLabel", label: "Image placeholder label", widget: "string" }

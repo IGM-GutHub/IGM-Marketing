@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "Daniel Cho",
+      "role": "Founder & CEO",
+      "bio": "Former healthcare IT director; leads strategy and client partnership."
+    },
+    {
+      "name": "Priya Nair",
+      "role": "VP, Security",
+      "bio": "Runs the SOC and compliance practice; CISSP, ex-financial services."
+    },
+    {
+      "name": "Marcus Webb",
+      "role": "Director, Service Delivery",
+      "bio": "Owns the help desk and response SLAs your team feels every day."
+    },
+    {
+      "name": "Sofia Alvarez",
+      "role": "Lead Cloud Architect",
+      "bio": "Designs secure cloud and continuity environments for regulated data."
+    }
+  ]
+}

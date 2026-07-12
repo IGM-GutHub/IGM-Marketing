@@ -1,0 +1,23 @@
+<header class="nav">
+  <a class="brand" href="/" aria-label="IronGate Managed IT — home">
+    <span class="brand__mark" aria-hidden="true"><span></span></span>
+    <span>
+      <span class="brand__name">IronGate</span>
+      <span class="brand__tag">Managed IT</span>
+    </span>
+  </a>
+  <nav aria-label="Main navigation">
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">
+      <span class="nav__toggle-bars" aria-hidden="true"></span>
+      <span class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Menu</span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="/services/" {% if page.url == "/services/" %}aria-current="page"{% endif %}>Services</a></li>
+      <li><a href="/services/#industries">Industries</a></li>
+      <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+      <li><a href="/resources/" {% if page.url == "/resources/" %}aria-current="page"{% endif %}>Resources</a></li>
+      <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn--primary btn--sm" href="/contact/">Book a consult</a>
+</header>

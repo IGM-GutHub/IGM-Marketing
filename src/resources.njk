@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: Security News & Resources
+description: The latest cybersecurity news and advisories from CISA, The Hacker News, BleepingComputer, and Krebs on Security — curated weekly by IronGate.
+permalink: /resources/
+ctaHeading: "Worried about a headline you just read?"
+ctaSub: "Book a free 30-minute consult and we'll tell you honestly whether it affects your firm."
+---
+
+<section class="section" style="padding-bottom:40px; background:linear-gradient(180deg,var(--mist-50),#fff); text-align:center;" aria-label="Resources overview">
+  <span class="pill">Resources</span>
+  <h1 class="display-1" style="max-width:820px; margin:18px auto 0;">Security news &amp; guidance</h1>
+  <p class="lead" style="max-width:640px; margin:20px auto 0;">What's happening in cybersecurity right now &mdash; advisories and reporting from the sources we trust, refreshed every week. Headlines link to the original articles.</p>
+</section>
+
+<section class="section" style="padding-top:32px" aria-label="Latest security headlines">
+  <div class="grid-3">
+    {% for item in news %}
+    <article class="news-card">
+      <div class="news-card__thumb" aria-hidden="true"><span class="news-card__source">{{ item.source }}</span></div>
+      <div class="news-card__body">
+        <div class="news-card__date"><time datetime="{{ item.date | isoDate }}">{{ item.date | newsDate }}</time></div>
+        <h3><a href="{{ item.link }}" rel="noopener external" target="_blank">{{ item.title }}<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"> (opens in a new tab)</span></a></h3>
+      </div>
+    </article>
+    {% else %}
+    <p style="color:var(--slate-500)">Fresh security headlines are being gathered &mdash; check back shortly.</p>
+    {% endfor %}
+  </div>
+  <p style="text-align:center; font-size:14px; color:var(--slate-500); margin-top:40px;">Sources: CISA advisories, The Hacker News, BleepingComputer, and Krebs on Security. IronGate curates but does not author these articles.</p>
+</section>
+
+{% include "partials/cta.njk" %}

@@ -1,0 +1,14 @@
+{
+  "name": "igm-site",
+  "version": "1.0.0",
+  "description": "IronGate Managed IT marketing website (igm-it.com)",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve --port=8090",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^4.0.1"
+  }
+}

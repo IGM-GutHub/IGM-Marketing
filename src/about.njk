@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+title: About
+description: IronGate Managed IT was founded on a simple idea — healthcare, legal, and financial firms deserve enterprise-grade security and support without an enterprise-sized IT department.
+permalink: /about/
+ctaHeading: "Let's protect what you've built."
+ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
+---
+
+<section class="hero" aria-label="About IronGate">
+  <div>
+    <span class="pill">About IronGate</span>
+    <h1 class="display-1" style="font-size:clamp(32px,4.5vw,52px)">The IT partner regulated firms trust</h1>
+    <p class="lead" style="margin-top:20px">IronGate Managed IT was founded on a simple idea: that healthcare, legal, and financial firms deserve enterprise-grade security and support without an enterprise-sized IT department. We've spent over a decade making that real.</p>
+  </div>
+  <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of the team and office" style="min-height:400px">
+    <span>[ image &mdash; team / office ]</span>
+  </div>
+</section>
+
+<section class="stats-band" aria-label="IronGate by the numbers">
+  {% for stat in site.aboutStats %}
+  <div class="stats-band__item">
+    <div class="stats-band__value">{{ stat.value }}</div>
+    <div class="stats-band__label">{{ stat.label }}</div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="split" aria-labelledby="story-heading">
+  <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of the founders" style="min-height:360px">
+    <span>[ image &mdash; founder / ops ]</span>
+  </div>
+  <div>
+    <p class="split__index">OUR STORY</p>
+    <h2 id="story-heading">Built by people who've been in the hot seat</h2>
+    <p class="body-copy">Our founders spent years running IT inside clinics and firms where a single outage or breach could mean lost patients, blown deadlines, or regulatory penalties. They knew the typical break-fix vendor wasn't good enough.</p>
+    <p class="body-copy" style="margin-top:14px">So they built IronGate around prevention, compliance, and genuine partnership &mdash; a team you can call by name that treats your risk as its own. Today we protect over 200 organizations across the region, and we've never lost a client to a preventable breach.</p>
+  </div>
+</section>
+
+<section class="section section--mist" aria-labelledby="values-heading">
+  <div class="section-head">
+    <p class="eyebrow">What we stand for</p>
+    <h2 id="values-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">Principles that show up in every ticket</h2>
+  </div>
+  <div class="grid-3">
+    <div class="card" style="padding:30px">
+      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/></svg></div>
+      <h3>Security first, always</h3>
+      <p>Every recommendation we make starts with the question: does this reduce your risk? Convenience never trumps protection.</p>
+    </div>
+    <div class="card" style="padding:30px">
+      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg></div>
+      <h3>Plain-English partnership</h3>
+      <p>No jargon, no condescension. We translate technology into decisions you can actually make with confidence.</p>
+    </div>
+    <div class="card" style="padding:30px">
+      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      <h3>Accountable &amp; responsive</h3>
+      <p>One team, one number, real people who know your environment &mdash; and answer in minutes, not days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="badge-strip" style="padding:56px var(--pad-x); flex-direction:column; gap:24px" aria-label="Partners and certifications">
+  <span class="badge-strip__label">Partners &amp; certifications</span>
+  <div style="display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center;">
+    {% for cert in certifications.items %}
+    <span class="badge-strip__item" style="font-size:20px">{{ cert.name }}</span>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="team-heading">
+  <div class="section-head">
+    <p class="eyebrow">Leadership</p>
+    <h2 id="team-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">The people behind your peace of mind</h2>
+  </div>
+  <div class="grid-4">
+    {% for person in team.items %}
+    <div class="team-card">
+      <div class="team-card__photo" role="img" aria-label="Placeholder for a photo of {{ person.name }}"></div>
+      <div class="team-card__body">
+        <div class="team-card__name">{{ person.name }}</div>
+        <div class="team-card__role">{{ person.role }}</div>
+        <p class="team-card__bio">{{ person.bio }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

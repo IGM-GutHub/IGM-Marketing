@@ -1,0 +1,112 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: Tell us a little about your firm and we'll get back within one business day to schedule a free 30-minute consult.
+permalink: /contact/
+---
+
+<section class="contact-grid" aria-label="Contact IronGate">
+  <div>
+    <span class="pill">Book a consult</span>
+    <h1 class="display-1" style="font-size:clamp(30px,4vw,46px); margin-top:18px">Let's find out how we can help.</h1>
+    <p class="lead" style="font-size:18px; margin-top:18px">Tell us a little about your firm and we'll get back within one business day to schedule a free 30-minute consult &mdash; no pressure, no jargon.</p>
+
+    <div style="display:flex; flex-direction:column; gap:20px; margin-top:36px;">
+      <div class="contact-item">
+        <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h2l2 5-2.5 1.5a12 12 0 0 0 5 5L14 12l5 2v2a2 2 0 0 1-2 2C9.8 18 4 12.2 4 5z"/></svg></div>
+        <div>
+          <div class="contact-item__title">Call us</div>
+          <div class="contact-item__value"><a href="tel:{{ site.contact.phone | replace('(', '') | replace(')', '') | replace(' ', '') | replace('-', '') }}">{{ site.contact.phone }}</a></div>
+          <div class="contact-item__note">{{ site.contact.hours }}</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <div>
+          <div class="contact-item__title">Email us</div>
+          <div class="contact-item__value"><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></div>
+          <div class="contact-item__note">{{ site.contact.emailNote }}</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div>
+          <div class="contact-item__title">Visit us</div>
+          <div class="contact-item__value">{{ site.contact.addressLine1 }}</div>
+          <div class="contact-item__note">{{ site.contact.addressLine2 }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="client-callout">
+      <div class="client-callout__head"><span class="topbar__dot" aria-hidden="true">&#9679;</span> Existing client?</div>
+      <p>Reach the 24/7 help desk any time at <strong>{{ site.existingClient.phone }}</strong> or <a href="mailto:{{ site.existingClient.email }}" style="color:var(--teal-300)">{{ site.existingClient.email }}</a>.</p>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>Request your free consult</h2>
+    <p class="form-card__hint">Fields marked <span aria-hidden="true">*</span><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">asterisk</span> are required.</p>
+
+    <form name="consult-inquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company-website">
+      <input type="hidden" name="form-name" value="consult-inquiry">
+      <p style="position:absolute; left:-9999px;" aria-hidden="true">
+        <label>Don't fill this out if you're human: <input name="company-website" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="f-name">Full name *</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+        </div>
+        <div class="form-field">
+          <label for="f-company">Company *</label>
+          <input id="f-company" name="company" type="text" required autocomplete="organization" placeholder="Acme Legal LLP">
+        </div>
+        <div class="form-field">
+          <label for="f-email">Work email *</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@acmelegal.com">
+        </div>
+        <div class="form-field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(312) 555-0000">
+        </div>
+        <div class="form-field">
+          <label for="f-industry">Industry</label>
+          <select id="f-industry" name="industry">
+            <option>Healthcare</option>
+            <option>Legal</option>
+            <option>Financial services</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-size">Company size</label>
+          <select id="f-size" name="company-size">
+            <option>1&ndash;10 employees</option>
+            <option>11&ndash;50 employees</option>
+            <option>51&ndash;200 employees</option>
+            <option>200+ employees</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-field" style="margin-top:18px">
+        <label for="f-message">What can we help with?</label>
+        <textarea id="f-message" name="message" rows="4" placeholder="Tell us about your current IT setup, pain points, or compliance needs&hellip;"></textarea>
+      </div>
+
+      <label class="form-check">
+        <input type="checkbox" name="security-assessment" value="yes">
+        <span>I'd like a free security assessment along with my consult.</span>
+      </label>
+
+      <button class="btn btn--primary" type="submit" style="width:100%; margin-top:24px; border-radius:10px">Book my consult &rarr;</button>
+      <p class="form-disclaimer">We'll never share your information. By submitting, you agree to be contacted about your request.</p>
+    </form>
+  </div>
+</section>
+
+<div class="img-placeholder map-placeholder" role="img" aria-label="Placeholder for a map showing the office at {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }}">
+  <span>[ map &mdash; {{ site.contact.addressLine1 }}, {{ site.contact.addressLine2 }} ]</span>
+</div>

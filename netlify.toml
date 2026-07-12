@@ -1,0 +1,31 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[functions]
+  directory = "netlify/functions"
+
+# Weekly rebuild so the security news feed stays fresh.
+# Requires BUILD_HOOK_URL env var (Site settings > Build & deploy > Build hooks).
+[functions."weekly-rebuild"]
+  schedule = "0 6 * * 1" # Mondays 06:00 UTC
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+
+# The Decap CMS admin needs to load its app bundle and talk to auth/git APIs,
+# so it gets its own (still restrictive) policy.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob:; connect-src 'self' https://api.github.com https://api.netlify.com https://*.netlify.com https://*.netlify.app; frame-ancestors 'none'; base-uri 'self'"

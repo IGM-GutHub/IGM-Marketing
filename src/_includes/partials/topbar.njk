@@ -1,0 +1,9 @@
+<div class="topbar">
+  <span class="topbar__left">{{ site.topbar.left }}</span>
+  <span class="topbar__status">
+    <span class="topbar__dot" aria-hidden="true">&#9679;</span>
+    {{ site.topbar.status }}
+    <span aria-hidden="true">&nbsp;|&nbsp;</span>
+    <a href="tel:{{ site.contact.phone | replace('(', '') | replace(')', '') | replace(' ', '') | replace('-', '') }}">{{ site.contact.phone }}</a>
+  </span>
+</div>

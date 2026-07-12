@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: Services
+description: Managed IT, cloud, network security, backup & recovery, remote support, compliance, and VoIP — one accountable team with flat monthly pricing.
+permalink: /services/
+ctaHeading: "Not sure which services you need?"
+ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no jargon."
+---
+
+<section class="section" style="padding-bottom:24px; background:linear-gradient(180deg,var(--mist-50),#fff); text-align:center;" aria-label="Services overview">
+  <span class="pill">What we do</span>
+  <h1 class="display-1" style="max-width:820px; margin:18px auto 0;">A complete IT department, managed for you</h1>
+  <p class="lead" style="max-width:640px; margin:20px auto 0;">Seven core services, one accountable team, and flat monthly pricing built for the compliance demands of healthcare, legal, and financial firms.</p>
+</section>
+
+<nav class="chip-row" aria-label="Jump to a service">
+  {% for svc in services.items %}
+  <a class="chip" href="#{{ svc.id }}">{{ svc.chip }}</a>
+  {% endfor %}
+</nav>
+
+{% for svc in services.items %}
+<section id="{{ svc.id }}" class="split {% if loop.index is even %}split--mist{% endif %}" aria-labelledby="{{ svc.id }}-heading">
+  <div>
+    <p class="split__index">{{ svc.index }}</p>
+    <h2 id="{{ svc.id }}-heading">{{ svc.heading }}</h2>
+    <p class="body-copy">{{ svc.body }}</p>
+    <ul class="feature-list">
+      {% for f in svc.features %}
+      <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="img-placeholder" role="img" aria-label="Placeholder image: {{ svc.imageLabel }}">
+    <span>[ image &mdash; {{ svc.imageLabel }} ]</span>
+  </div>
+</section>
+{% endfor %}
+
+<section class="section section--navy" id="industries" aria-labelledby="svc-industries-heading">
+  <div class="section-head">
+    <p class="eyebrow eyebrow--light">Who we serve</p>
+    <h2 id="svc-industries-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">Tailored to regulated industries</h2>
+  </div>
+  <div class="grid-3">
+    <div class="industry-card">
+      <div class="industry-card__index">HEALTHCARE</div>
+      <h3>Clinics &amp; practices</h3>
+      <p>HIPAA-aligned infrastructure, EHR support, and breach protection for patient data.</p>
+    </div>
+    <div class="industry-card">
+      <div class="industry-card__index">LEGAL</div>
+      <h3>Law firms</h3>
+      <p>Confidential document management, secure e-discovery, and airtight client privilege.</p>
+    </div>
+    <div class="industry-card">
+      <div class="industry-card__index">FINANCE</div>
+      <h3>Financial services</h3>
+      <p>SEC &amp; FINRA-conscious controls, encryption, and continuity for firms that move money.</p>
+    </div>
+  </div>
+</section>
+
+{% include "partials/cta.njk" %}

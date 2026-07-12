@@ -1,0 +1,35 @@
+{
+  "name": "IronGate",
+  "legalName": "IronGate Managed IT, LLC",
+  "domain": "https://igm-it.com",
+  "description": "Compliance-ready managed IT, cybersecurity, and support for healthcare, legal, and financial firms.",
+  "topbar": {
+    "left": "Serving healthcare, legal & finance across the region · Mon–Fri 7a–7p support",
+    "status": "24/7 monitoring active"
+  },
+  "contact": {
+    "phone": "(312) 555-0142",
+    "email": "hello@igm-it.com",
+    "addressLine1": "120 N Wacker Dr, Suite 1400",
+    "addressLine2": "Chicago, IL 60606",
+    "city": "Chicago, IL",
+    "hours": "Mon–Fri, 7am–7pm CT",
+    "emailNote": "We reply within one business day"
+  },
+  "existingClient": {
+    "phone": "(312) 555-0199",
+    "email": "support@igm-it.com"
+  },
+  "heroStats": [
+    { "value": "99.98%", "label": "uptime SLA" },
+    { "value": "< 15 min", "label": "avg. response" },
+    { "value": "200+", "label": "clients secured" }
+  ],
+  "aboutStats": [
+    { "value": "12+", "label": "years in business" },
+    { "value": "200+", "label": "clients secured" },
+    { "value": "99.98%", "label": "uptime delivered" },
+    { "value": "30+", "label": "certified engineers" }
+  ],
+  "footerBlurb": "Compliance-ready managed IT for healthcare, legal, and financial firms."
+}
