@@ -1,3 +1,9 @@
+# Local preview: run `npx decap-server` in a second terminal alongside
+# `npm run dev`, then open http://localhost:8090/admin/ — no login needed,
+# edits write straight to the local files/git. Only works on localhost;
+# the deployed site always uses the real login below.
+local_backend: true
+
 backend:
   name: git-gateway
   branch: main
