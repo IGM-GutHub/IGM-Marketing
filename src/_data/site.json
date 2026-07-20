@@ -29,12 +29,12 @@
   "name": "IronGate",
   "sections": {
     "values": true,
-    "cta": true,
+    "cta": false,
     "aboutStats": true,
     "news": true,
     "testimonials": false,
     "story": true,
-    "existingClient": true,
+    "existingClient": false,
     "certifications": false,
     "map": true,
     "industries": true,
@@ -53,10 +53,6 @@
     {
       "value": "99.98%",
       "label": "uptime delivered"
-    },
-    {
-      "value": "30+",
-      "label": "certified engineers"
     }
   ],
   "favicon": "",
