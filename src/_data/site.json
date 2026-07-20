@@ -19,36 +19,28 @@
     {
       "value": "< 15 min",
       "label": "avg. response"
-    },
-    {
-      "value": "200+",
-      "label": "clients secured"
     }
   ],
   "logo": "",
   "name": "IronGate",
   "sections": {
-    "values": true,
+    "values": false,
     "cta": false,
-    "aboutStats": true,
-    "news": true,
+    "aboutStats": false,
+    "news": false,
     "testimonials": false,
     "story": true,
     "existingClient": false,
     "certifications": false,
     "map": true,
-    "industries": true,
+    "industries": false,
     "team": false,
-    "services": true
+    "services": false
   },
   "aboutStats": [
     {
       "value": "12+",
       "label": "years in business"
-    },
-    {
-      "value": "200+",
-      "label": "clients secured"
     },
     {
       "value": "99.98%",
