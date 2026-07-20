@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "pill": "About IronGate",
+    "heading": "The IT partner regulated firms trust",
+    "lead": "IronGate Managed IT was founded on a simple idea: that healthcare, legal, and financial firms deserve enterprise-grade security and support without an enterprise-sized IT department. We've spent over a decade making that real."
+  },
+  "story": {
+    "eyebrow": "OUR STORY",
+    "heading": "Built by people who've been in the hot seat",
+    "para1": "Our founders spent years running IT inside clinics and firms where a single outage or breach could mean lost patients, blown deadlines, or regulatory penalties. They knew the typical break-fix vendor wasn't good enough.",
+    "para2": "So they built IronGate around prevention, compliance, and genuine partnership — a team you can call by name that treats your risk as its own. Today we protect over 200 organizations across the region, and we've never lost a client to a preventable breach."
+  },
+  "valuesHead": {
+    "eyebrow": "What we stand for",
+    "heading": "Principles that show up in every ticket"
+  },
+  "values": [
+    {
+      "title": "Security first, always",
+      "body": "Every recommendation we make starts with the question: does this reduce your risk? Convenience never trumps protection."
+    },
+    {
+      "title": "Plain-English partnership",
+      "body": "No jargon, no condescension. We translate technology into decisions you can actually make with confidence."
+    },
+    {
+      "title": "Accountable & responsive",
+      "body": "One team, one number, real people who know your environment — and answer in minutes, not days."
+    }
+  ]
+}

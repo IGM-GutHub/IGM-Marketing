@@ -31,7 +31,7 @@ ctaSub: "Book a free 30-minute consult and we'll map your risks and gaps — no 
       {% endfor %}
     </ul>
   </div>
-  {% if svc.image %}
+  {% if site.sections.photos and svc.image %}
   <img class="photo" src="{{ svc.image }}" alt="{{ svc.imageLabel }}" style="min-height:340px">
   {% else %}
   <div class="img-placeholder" role="img" aria-label="Placeholder image: {{ svc.imageLabel }}">

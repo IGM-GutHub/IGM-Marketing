@@ -26,6 +26,10 @@
     ["company short name", ".brand"],
     ["legal name", ".footer"],
     // Content collections
+    ["about page intro", ".pv-about-hero"],
+    ["our story", ".pv-story"],
+    ["values section heading", ".section-head"],
+    ["value cards", ".card"],
     ["certifications", ".badge-strip__item"],
     ["testimonials", ".quote-card"],
     ["industries", ".industry-card"],

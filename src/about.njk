@@ -9,11 +9,11 @@ ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
 
 <section class="hero" aria-label="About IronGate">
   <div>
-    <span class="pill">About IronGate</span>
-    <h1 class="display-1" style="font-size:clamp(32px,4.5vw,52px)">The IT partner regulated firms trust</h1>
-    <p class="lead" style="margin-top:20px">IronGate Managed IT was founded on a simple idea: that healthcare, legal, and financial firms deserve enterprise-grade security and support without an enterprise-sized IT department. We've spent over a decade making that real.</p>
+    <span class="pill">{{ about.hero.pill }}</span>
+    <h1 class="display-1" style="font-size:clamp(32px,4.5vw,52px)">{{ about.hero.heading }}</h1>
+    <p class="lead" style="margin-top:20px">{{ about.hero.lead }}</p>
   </div>
-  {% if site.images.aboutHero %}
+  {% if site.sections.photos and site.images.aboutHero %}
   <img class="photo" src="{{ site.images.aboutHero }}" alt="The IronGate team and office" style="min-height:400px">
   {% else %}
   <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of the team and office" style="min-height:400px">
@@ -35,7 +35,7 @@ ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
 
 {% if site.sections.story %}
 <section class="split" aria-labelledby="story-heading">
-  {% if site.images.story %}
+  {% if site.sections.photos and site.images.story %}
   <img class="photo" src="{{ site.images.story }}" alt="IronGate founders" style="min-height:360px">
   {% else %}
   <div class="img-placeholder" role="img" aria-label="Placeholder for a photo of the founders" style="min-height:360px">
@@ -43,10 +43,10 @@ ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
   </div>
   {% endif %}
   <div>
-    <p class="split__index">OUR STORY</p>
-    <h2 id="story-heading">Built by people who've been in the hot seat</h2>
-    <p class="body-copy">Our founders spent years running IT inside clinics and firms where a single outage or breach could mean lost patients, blown deadlines, or regulatory penalties. They knew the typical break-fix vendor wasn't good enough.</p>
-    <p class="body-copy" style="margin-top:14px">So they built IronGate around prevention, compliance, and genuine partnership &mdash; a team you can call by name that treats your risk as its own. Today we protect over 200 organizations across the region, and we've never lost a client to a preventable breach.</p>
+    <p class="split__index">{{ about.story.eyebrow }}</p>
+    <h2 id="story-heading">{{ about.story.heading }}</h2>
+    <p class="body-copy">{{ about.story.para1 }}</p>
+    <p class="body-copy" style="margin-top:14px">{{ about.story.para2 }}</p>
   </div>
 </section>
 {% endif %}
@@ -54,25 +54,21 @@ ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
 {% if site.sections.values %}
 <section class="section section--mist" aria-labelledby="values-heading">
   <div class="section-head">
-    <p class="eyebrow">What we stand for</p>
-    <h2 id="values-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">Principles that show up in every ticket</h2>
+    <p class="eyebrow">{{ about.valuesHead.eyebrow }}</p>
+    <h2 id="values-heading" class="display-2" style="font-size:clamp(28px,3vw,36px)">{{ about.valuesHead.heading }}</h2>
   </div>
   <div class="grid-3">
+    {% for v in about.values %}
     <div class="card" style="padding:30px">
-      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/></svg></div>
-      <h3>Security first, always</h3>
-      <p>Every recommendation we make starts with the question: does this reduce your risk? Convenience never trumps protection.</p>
+      <div class="icon-chip" aria-hidden="true">
+        {% if loop.index0 % 3 == 0 %}<svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/></svg>
+        {% elif loop.index0 % 3 == 1 %}<svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg>
+        {% else %}<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>{% endif %}
+      </div>
+      <h3>{{ v.title }}</h3>
+      <p>{{ v.body }}</p>
     </div>
-    <div class="card" style="padding:30px">
-      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg></div>
-      <h3>Plain-English partnership</h3>
-      <p>No jargon, no condescension. We translate technology into decisions you can actually make with confidence.</p>
-    </div>
-    <div class="card" style="padding:30px">
-      <div class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-      <h3>Accountable &amp; responsive</h3>
-      <p>One team, one number, real people who know your environment &mdash; and answer in minutes, not days.</p>
-    </div>
+    {% endfor %}
   </div>
 </section>
 {% endif %}
@@ -97,7 +93,7 @@ ctaSub: "Book a free 30-minute consult — meet the team and see how we work."
   <div class="grid-4">
     {% for person in team.items %}
     <div class="team-card">
-      {% if person.photo %}
+      {% if site.sections.photos and person.photo %}
       <div class="team-card__photo"><img src="{{ person.photo }}" alt="{{ person.name }}"></div>
       {% else %}
       <div class="team-card__photo" role="img" aria-label="Placeholder for a photo of {{ person.name }}"></div>

@@ -24,6 +24,7 @@
   "logo": "",
   "name": "IronGate",
   "sections": {
+    "photos": true,
     "values": true,
     "cta": false,
     "aboutStats": true,

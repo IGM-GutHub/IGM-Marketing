@@ -144,6 +144,36 @@
     },
   });
 
+  /* ---------- About Page ---------- */
+  var AboutPreview = createClass({
+    render: function () {
+      var e = this.props.entry;
+      return h("div", { className: "page" },
+        h("section", { className: "hero pv-about-hero" },
+          h("div", null,
+            h("span", { className: "pill" }, val(e, ["hero", "pill"])),
+            h("h1", { className: "display-1", style: { marginTop: "18px" } }, val(e, ["hero", "heading"])),
+            h("p", { className: "lead", style: { marginTop: "20px" } }, val(e, ["hero", "lead"])))),
+        h("section", { className: "split pv-story" },
+          h("div", null,
+            h("p", { className: "split__index" }, val(e, ["story", "eyebrow"])),
+            h("h2", null, val(e, ["story", "heading"])),
+            h("p", { className: "body-copy" }, val(e, ["story", "para1"])),
+            h("p", { className: "body-copy", style: { marginTop: "14px" } }, val(e, ["story", "para2"])))),
+        h("section", { className: "section section--mist" },
+          h("div", { className: "section-head" },
+            h("p", { className: "eyebrow" }, val(e, ["valuesHead", "eyebrow"])),
+            h("h2", { className: "display-2" }, val(e, ["valuesHead", "heading"]))),
+          h("div", { className: "grid-3" },
+            items(e, ["values"]).map(function (v, i) {
+              return h("div", { className: "card", key: i, style: { padding: "30px" } },
+                h("div", { className: "icon-chip" }),
+                h("h3", null, v.title),
+                h("p", null, v.body));
+            }))));
+    },
+  });
+
   /* ---------- Certifications ---------- */
   var CertsPreview = createClass({
     render: function () {
@@ -256,6 +286,7 @@
   });
 
   CMS.registerPreviewTemplate("site", SitePreview);
+  CMS.registerPreviewTemplate("about", AboutPreview);
   CMS.registerPreviewTemplate("certifications", CertsPreview);
   CMS.registerPreviewTemplate("testimonials", TestimonialsPreview);
   CMS.registerPreviewTemplate("industries", IndustriesPreview);
