@@ -1,21 +1,16 @@
 {
   "footerBlurb": "Compliance-ready managed IT for healthcare, legal, and financial firms.",
   "contact": {
-    "phone": "(312) 555-0142",
-    "email": "hello@igm-it.com",
-    "addressLine1": "120 N Wacker Dr, Suite 1400",
-    "addressLine2": "Chicago, IL 60606",
-    "city": "Chicago, IL",
-    "hours": "Mon–Fri, 7am–7pm CT",
+    "phone": "(574) 933-2091",
+    "email": "Sales@igm-it.com",
+    "addressLine1": "120 WestView Ct.",
+    "addressLine2": "Argos, IN 46501",
+    "city": "Argos, IN",
+    "hours": "Mon–Fri, 9am–5pm ET",
     "emailNote": "We reply within one business day"
   },
   "domain": "https://igm-it.com",
   "legalName": "IronGate Managed IT, LLC",
-  "hero": {
-    "pill": "HIPAA · SOC 2 · compliance-ready IT",
-    "heading": "IT that keeps regulated business running.",
-    "lead": "IronGate delivers managed IT, cybersecurity, and compliance support built for healthcare, legal, and financial firms — so downtime, audits, and breaches never slow you down."
-  },
   "heroStats": [
     {
       "value": "99.98%",
@@ -30,7 +25,22 @@
       "label": "clients secured"
     }
   ],
+  "logo": "",
   "name": "IronGate",
+  "sections": {
+    "values": true,
+    "cta": true,
+    "aboutStats": true,
+    "news": true,
+    "testimonials": false,
+    "story": true,
+    "existingClient": true,
+    "certifications": false,
+    "map": true,
+    "industries": true,
+    "team": false,
+    "services": true
+  },
   "aboutStats": [
     {
       "value": "12+",
@@ -49,36 +59,26 @@
       "label": "certified engineers"
     }
   ],
+  "favicon": "",
   "inquiryEmail": "marketing@igm-it.com",
   "existingClient": {
-    "phone": "(312) 555-0199",
+    "phone": "usersupport@igm-it.com",
     "email": "support@igm-it.com"
   },
-  "description": "Compliance-ready managed IT, cybersecurity, and support for healthcare, legal, and financial firms.",
-  "topbar": {
-    "left": "Serving healthcare, legal & finance across the region · Mon–Fri 7a–7p support",
-    "status": "24/7 monitoring active"
-  },
-  "logo": "",
-  "favicon": "",
   "images": {
     "hero": "",
     "aboutHero": "",
     "story": "",
     "map": ""
   },
-  "sections": {
-    "certifications": true,
-    "services": true,
-    "industries": true,
-    "testimonials": true,
-    "news": true,
-    "cta": true,
-    "aboutStats": true,
-    "story": true,
-    "values": true,
-    "team": false,
-    "existingClient": true,
-    "map": true
+  "hero": {
+    "pill": "HIPAA · SOC 2 · compliance-ready IT",
+    "heading": "IT that keeps regulated business running.",
+    "lead": "IronGate delivers managed IT, cybersecurity, and compliance support built for healthcare, legal, and financial firms — so downtime, audits, and breaches never slow you down."
+  },
+  "description": "Compliance-ready managed IT, cybersecurity, and support for healthcare, legal, and financial firms.",
+  "topbar": {
+    "left": "Serving healthcare, legal & finance across the region · Mon–Fri 7a–7p support",
+    "status": "24/7 monitoring active"
   }
 }
