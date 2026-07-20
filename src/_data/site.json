@@ -26,16 +26,16 @@
   "sections": {
     "values": false,
     "cta": false,
-    "aboutStats": false,
-    "news": false,
+    "aboutStats": true,
+    "news": true,
     "testimonials": false,
     "story": true,
     "existingClient": false,
-    "certifications": false,
-    "map": true,
-    "industries": false,
+    "certifications": true,
+    "map": false,
+    "industries": true,
     "team": false,
-    "services": false
+    "services": true
   },
   "aboutStats": [
     {
