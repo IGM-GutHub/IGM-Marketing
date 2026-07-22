@@ -48,7 +48,7 @@
       "label": "uptime delivered"
     }
   ],
-  "favicon": "",
+  "favicon": "/assets/img/uploads/irongate-mark.svg",
   "inquiryEmail": "marketing@igm-it.com",
   "existingClient": {
     "phone": "usersupport@igm-it.com",
