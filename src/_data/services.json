@@ -72,7 +72,8 @@
         "New-hire onboarding & offboarding",
         "Device provisioning & mobile support"
       ],
-      "imageLabel": "help desk team"
+      "imageLabel": "help desk team",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "compliance",
