@@ -57,7 +57,7 @@
   "images": {
     "hero": "https://chatgpt.com/s/m_6a5e75c0d3ac8191b67d746b2266c072",
     "aboutHero": "/assets/img/uploads/irongate-mark.svg",
-    "story": "",
+    "story": "/assets/img/uploads/irongate-mark.svg",
     "map": ""
   },
   "hero": {
