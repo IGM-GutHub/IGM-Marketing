@@ -12,7 +12,8 @@
         "Patch management & asset lifecycle",
         "Strategic technology roadmapping (vCIO)"
       ],
-      "imageLabel": "NOC / dashboard"
+      "imageLabel": "NOC / dashboard",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "cloud",
