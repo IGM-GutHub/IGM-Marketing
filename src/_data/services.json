@@ -27,7 +27,8 @@
         "Identity & access management with MFA",
         "Cost optimization & license management"
       ],
-      "imageLabel": "cloud infrastructure"
+      "imageLabel": "cloud infrastructure",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "network",
