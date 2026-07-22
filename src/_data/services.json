@@ -87,7 +87,8 @@
         "Security awareness training & phishing tests",
         "Audit support & evidence collection"
       ],
-      "imageLabel": "audit / compliance"
+      "imageLabel": "audit / compliance",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "voip",
@@ -101,7 +102,8 @@
         "Desktop & mobile softphone apps",
         "Seamless number porting & setup"
       ],
-      "imageLabel": "VoIP handset / app"
+      "imageLabel": "VoIP handset / app",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     }
   ]
 }
