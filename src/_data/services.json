@@ -42,7 +42,8 @@
         "Email filtering & phishing protection",
         "24/7 SOC monitoring & threat response"
       ],
-      "imageLabel": "security operations"
+      "imageLabel": "security operations",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "backup",
