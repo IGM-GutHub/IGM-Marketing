@@ -57,7 +57,8 @@
         "Business continuity & failover",
         "Retention policies aligned to regulations"
       ],
-      "imageLabel": "recovery / continuity"
+      "imageLabel": "recovery / continuity",
+      "image": "/assets/img/uploads/irongate-mark.svg"
     },
     {
       "id": "remote",
